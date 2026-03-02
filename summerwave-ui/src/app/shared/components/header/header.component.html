@@ -1,0 +1,100 @@
+<header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a routerLink="/" class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-sky-400 flex items-center justify-center text-white font-bold text-xl">
+                        S
+                    </div>
+                    <span class="font-extrabold text-xl tracking-tight text-slate-800">SummerWave<span
+                            class="text-sky-500">.</span></span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a routerLink="/" routerLinkActive="text-sky-600 font-semibold"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    class="text-slate-600 hover:text-sky-600 font-medium transition-colors">Home</a>
+                <a routerLink="/booking" routerLinkActive="text-sky-600 font-semibold"
+                    class="text-slate-600 hover:text-sky-600 font-medium transition-colors">Book Tickets</a>
+
+                <!-- Auth Dependent Links -->
+                <ng-container *ngIf="!authService.isAuthenticated()">
+                    <a routerLink="/login" class="text-slate-600 hover:text-sky-600 font-medium transition-colors">Log
+                        In</a>
+                    <a routerLink="/register"
+                        class="bg-sky-500 hover:bg-sky-600 text-white px-5 py-2 rounded-full font-semibold transition-colors shadow-md shadow-sky-500/20">Sign
+                        Up</a>
+                </ng-container>
+
+                <ng-container *ngIf="authService.isAuthenticated() && authService.userRole() === 'CUSTOMER'">
+                    <a routerLink="/dashboard" routerLinkActive="text-sky-600 font-semibold"
+                        class="text-slate-600 hover:text-sky-600 font-medium transition-colors">My Bookings</a>
+                    <button (click)="logout()"
+                        class="text-slate-600 hover:text-rose-600 font-medium transition-colors">Log Out</button>
+                </ng-container>
+
+                <ng-container *ngIf="authService.isAuthenticated() && authService.userRole() === 'ADMIN'">
+                    <a routerLink="/admin" routerLinkActive="text-sky-600 font-semibold"
+                        class="text-slate-600 hover:text-sky-600 font-medium transition-colors">Admin Panel</a>
+                    <button (click)="logout()"
+                        class="text-slate-600 hover:text-rose-600 font-medium transition-colors">Log Out</button>
+                </ng-container>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <div class="flex md:hidden items-center">
+                <button (click)="toggleMenu()" class="text-slate-500 hover:text-slate-900 focus:outline-none p-2">
+                    <svg class="h-6 w-6" *ngIf="!isMenuOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg class="h-6 w-6" *ngIf="isMenuOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden" *ngIf="isMenuOpen">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-slate-100 shadow-sm">
+            <a routerLink="/" (click)="toggleMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-sky-600 hover:bg-slate-50">Home</a>
+            <a routerLink="/booking" (click)="toggleMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-sky-600 hover:bg-slate-50">Book
+                Tickets</a>
+
+            <ng-container *ngIf="!authService.isAuthenticated()">
+                <a routerLink="/login" (click)="toggleMenu()"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-sky-600 hover:bg-slate-50">Log
+                    In</a>
+                <a routerLink="/register" (click)="toggleMenu()"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-sky-600 bg-sky-50 mt-2">Sign Up</a>
+            </ng-container>
+
+            <ng-container *ngIf="authService.isAuthenticated() && authService.userRole() === 'CUSTOMER'">
+                <a routerLink="/dashboard" (click)="toggleMenu()"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-sky-600 hover:bg-slate-50">My
+                    Bookings</a>
+                <button (click)="logout()"
+                    class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-rose-600 hover:bg-rose-50 mt-2">Log
+                    Out</button>
+            </ng-container>
+
+            <ng-container *ngIf="authService.isAuthenticated() && authService.userRole() === 'ADMIN'">
+                <a routerLink="/admin" (click)="toggleMenu()"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-sky-600 hover:bg-slate-50">Admin
+                    Panel</a>
+                <button (click)="logout()"
+                    class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-rose-600 hover:bg-rose-50 mt-2">Log
+                    Out</button>
+            </ng-container>
+        </div>
+    </div>
+</header>

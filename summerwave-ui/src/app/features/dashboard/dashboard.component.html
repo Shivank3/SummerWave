@@ -1,0 +1,100 @@
+<div class="min-h-[calc(100vh-64px)] bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+
+        <div class="mb-10">
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">My Profile & Bookings</h1>
+            <p class="text-sm text-slate-500 mt-2">Manage your upcoming trips and view booking history.</p>
+        </div>
+
+        <!-- Active/Upcoming Bookings -->
+        <div class="mb-12">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                <svg class="w-6 h-6 mr-2 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                    </path>
+                </svg>
+                Upcoming Bookings
+            </h2>
+
+            <div *ngIf="upcomingBookings.length === 0"
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center">
+                <p class="text-slate-500">You don't have any upcoming bookings.</p>
+            </div>
+
+            <div *ngFor="let booking of upcomingBookings"
+                class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden mb-6 hover:shadow-lg hover:border-sky-100 transition-all">
+                <div class="p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+
+                    <div class="flex-1">
+                        <span
+                            class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-3">CONFIRMED</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-1">Visit on {{ booking.date | date:'longDate' }}
+                        </h3>
+                        <p class="text-slate-500">Booking ID: <span class="font-mono text-slate-700 font-semibold">{{
+                                booking.id }}</span> &bull; {{ booking.tickets }} Tickets</p>
+                    </div>
+
+                    <div class="flex flex-col gap-3 w-full sm:w-auto">
+                        <button (click)="downloadTicket(booking.id)"
+                            class="px-6 py-3 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-xl shadow-md transition-colors flex justify-center items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            Download Ticket PDF
+                        </button>
+                        <button (click)="cancelBooking(booking.id)"
+                            class="px-6 py-3 bg-white border border-rose-200 text-rose-600 hover:bg-rose-50 font-bold rounded-xl transition-colors flex justify-center items-center">
+                            Cancel Booking
+                        </button>
+                    </div>
+
+                </div>
+                <div
+                    class="bg-slate-50 px-6 py-4 border-t border-slate-100 text-sm text-slate-500 flex justify-between">
+                    <span>Amount Paid: <strong class="text-slate-900">₹{{ booking.totalAmount | number:'1.0-0'
+                            }}</strong></span>
+                    <a href="#" class="text-sky-600 hover:text-sky-500 font-medium">View Receipt</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Past Bookings -->
+        <div>
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                <svg class="w-6 h-6 mr-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Past Bookings
+            </h2>
+
+            <div *ngIf="pastBookings.length === 0"
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center">
+                <p class="text-slate-500">No past bookings found.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div *ngFor="let booking of pastBookings"
+                    class="bg-white rounded-xl border border-slate-200 p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div>
+                        <div class="flex items-center gap-3 mb-1">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold"
+                                [ngClass]="booking.status === 'CONFIRMED' ? 'bg-slate-100 text-slate-600' : 'bg-rose-100 text-rose-700'">
+                                {{ booking.status }}
+                            </span>
+                            <span class="text-sm font-mono text-slate-500">{{ booking.id }}</span>
+                        </div>
+                        <p class="font-medium text-slate-900">{{ booking.date | date:'mediumDate' }} &bull; {{
+                            booking.tickets }} Tickets</p>
+                    </div>
+                    <div class="font-semibold text-slate-700">
+                        ₹{{ booking.totalAmount | number:'1.0-0' }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

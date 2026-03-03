@@ -1,269 +1,434 @@
-<div class="flex flex-col min-h-[calc(100vh-64px)] overflow-hidden">
+<div class="flex flex-col min-h-[calc(100vh-72px)] overflow-hidden" style="background: #f0f6ff;">
 
-    <!-- Hero Banner with CTA -->
-    <section class="relative w-full h-[600px] flex items-center justify-center bg-blue-900 overflow-hidden">
-        <!-- Overlay Gradient for better text readability -->
-        <div class="absolute inset-0 bg-gradient-to-b from-blue-900/60 to-blue-900/90 z-10"></div>
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO SECTION — Full 3D Waterpark Banner
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="relative w-full h-[700px] flex items-center justify-center overflow-hidden">
+        <!-- 3D Hero Background Image -->
+        <img src="assets/images/aqua_park_hero.png"
+            alt="SummerWave 3D Waterpark — Colorful spiral waterslides and crystal wave pool"
+            class="absolute inset-0 w-full h-full object-cover object-center scale-105"
+            style="transform-origin: center; animation: wave-pulse 8s ease-in-out infinite;">
 
-        <!-- Hero Image Placeholder (CSS background or img tag) -->
-        <img src="https://images.unsplash.com/photo-1571109038234-754d927dccfe"
-            alt="Family Waterpark Wave Pool Weekend Getaway"
-            class="absolute inset-0 w-full h-full object-cover object-center opacity-70 mix-blend-overlay">
+        <!-- Deep Ocean Gradient Overlay -->
+        <div class="absolute inset-0"
+            style="background: linear-gradient(175deg, rgba(2,11,24,0.55) 0%, rgba(4,28,44,0.45) 40%, rgba(2,11,24,0.85) 100%);">
+        </div>
+
+        <!-- Radial Cyan Glow -->
+        <div class="absolute inset-0 pointer-events-none"
+            style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,212,255,0.08) 0%, transparent 70%);">
+        </div>
 
         <!-- Hero Content -->
-        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 drop-shadow-lg">
-                Dive Into The Ultimate <span class="text-sky-300">Family Waterpark</span> Experience
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto">
+            <!-- Section tag -->
+            <div class="sw-section-tag mb-6">🌊 India's #1 Waterpark Experience</div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight"
+                style="font-family: 'Outfit', sans-serif; text-shadow: 0 4px 32px rgba(0,0,0,0.5);">
+                Dive Into The
+                <span
+                    style="background: linear-gradient(135deg, #00D4FF, #67E8F9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    Ultimate
+                </span><br>Waterpark Experience
             </h1>
-            <p class="text-lg md:text-2xl text-blue-100 font-medium mb-10 drop-shadow">
-                The perfect weekend getaway. Thrills, wave pools, and fun for all ages.
+
+            <p class="text-lg md:text-xl text-sky-100/90 font-medium mb-10 max-w-2xl mx-auto leading-relaxed"
+                style="text-shadow: 0 2px 8px rgba(0,0,0,0.4);">
+                30+ thrilling rides · Wave pools · Family fun for all ages.
+                Book online and save up to <strong class="text-yellow-300">25%</strong>.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a routerLink="/booking"
-                    class="px-8 py-4 bg-sky-500 hover:bg-sky-400 text-white text-lg font-bold rounded-full shadow-lg hover:shadow-sky-500/50 transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto text-center">
-                    Buy Waterpark Tickets Online
+                <a routerLink="/booking" class="sw-btn-primary px-10 py-4 text-base"
+                    style="font-size: 1rem; padding: 14px 36px;">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                    </svg>
+                    Buy Tickets — Best Price
                 </a>
                 <a href="#attractions"
-                    class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-lg font-bold rounded-full border border-white/20 transition-all duration-300 w-full sm:w-auto text-center">
-                    View Attractions
+                    class="px-10 py-4 text-base font-bold text-white rounded-full border border-white/25 hover:border-white/50 hover:bg-white/10 backdrop-blur-md transition-all duration-300"
+                    style="font-size: 1rem; padding: 14px 36px;">
+                    Explore Attractions ↓
                 </a>
+            </div>
+
+            <!-- Quick stat bar -->
+            <div class="mt-14 flex flex-wrap justify-center gap-8">
+                <div class="text-center">
+                    <div class="text-3xl font-black text-white" style="font-family:'Outfit',sans-serif;">30+</div>
+                    <div class="text-xs text-sky-300 font-semibold uppercase tracking-widest mt-1">Water Rides</div>
+                </div>
+                <div style="width:1px; background: rgba(255,255,255,0.15);"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-black text-white" style="font-family:'Outfit',sans-serif;">5★</div>
+                    <div class="text-xs text-sky-300 font-semibold uppercase tracking-widest mt-1">Guest Rating</div>
+                </div>
+                <div style="width:1px; background: rgba(255,255,255,0.15);"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-black text-white" style="font-family:'Outfit',sans-serif;">2L+</div>
+                    <div class="text-xs text-sky-300 font-semibold uppercase tracking-widest mt-1">Happy Visitors</div>
+                </div>
+                <div style="width:1px; background: rgba(255,255,255,0.15);"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-black text-white" style="font-family:'Outfit',sans-serif;">₹599</div>
+                    <div class="text-xs text-sky-300 font-semibold uppercase tracking-widest mt-1">Starting From</div>
+                </div>
             </div>
         </div>
 
-        <!-- Decorative bottom wave -->
+        <!-- Bottom wave transition to light bg -->
         <div class="absolute bottom-0 left-0 right-0 z-20">
-            <svg viewBox="0 0 1440 120" class="w-full text-slate-50 fill-current" preserveAspectRatio="none">
+            <svg viewBox="0 0 1440 100" class="w-full" style="fill:#F0F9FF;" preserveAspectRatio="none">
                 <path
-                    d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z">
-                </path>
+                    d="M0,50L60,55.3C120,61,240,71,360,68C480,65,600,48,720,43C840,37,960,43,1080,50C1200,56,1320,64,1380,67.3L1440,70L1440,100L0,100Z" />
             </svg>
         </div>
     </section>
 
-    <!-- Ticket Pricing Cards Section -->
-    <section class="py-20 bg-slate-50 relative z-10 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
+    <!-- ═══════════════════════════════════════════════════════════
+         TICKET PRICING — Premium Cards
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style="background:#f0f6ff;">
+        <!-- Subtle wave bg watermark -->
+        <img src="assets/images/wave_bg.png" alt="" aria-hidden="true"
+            class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" style="opacity:0.06;">
+        <div class="absolute inset-0"
+            style="background: linear-gradient(180deg,#f0f6ff 0%, #e0f2fe 50%, #f0f6ff 100%); opacity:0.9;"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Waterpark Tickets & Pricing</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Affordable family fun with dynamic pricing. Save
-                    more by booking your amusement park tickets early!</p>
+                <div class="sw-section-tag">🎫 Tickets & Pricing</div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 mt-3"
+                    style="font-family:'Outfit',sans-serif; letter-spacing:-0.02em;">
+                    Waterpark Tickets & Pricing
+                </h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+                    Affordable family fun with dynamic pricing. Save more by booking your tickets early!
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
 
                 <!-- Adult Ticket -->
-                <article
-                    class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 border border-slate-100 flex flex-col justify-between transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-200/40">
+                <article class="sw-card p-8 flex flex-col justify-between">
                     <div>
-                        <div
-                            class="w-14 h-14 bg-sky-100 rounded-2xl flex items-center justify-center mb-6 text-sky-600">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                            style="background: linear-gradient(135deg,#e0f2fe,#bae6fd);">
+                            <svg class="w-7 h-7 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Adult Ticket</h3>
-                        <p class="text-slate-500 mb-6">Age 12 and above. Access to all extreme rides and pools.</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2" style="font-family:'Outfit',sans-serif;">
+                            Adult Ticket</h3>
+                        <p class="text-slate-500 mb-6 text-sm">Age 12 and above. Full access to all extreme rides and
+                            pools.</p>
                         <div class="flex items-baseline gap-2 mb-6">
-                            <span class="text-4xl font-extrabold text-slate-900">₹999</span>
+                            <span class="text-4xl font-extrabold" style="color:#0D4B77;">₹999</span>
                             <span class="text-sm font-semibold text-slate-400 line-through">₹1299</span>
+                            <span
+                                class="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full ml-1">-23%</span>
                         </div>
                         <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-slate-600"><svg class="w-5 h-5 text-sky-500 mr-3"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>All wave pools</li>
-                            <li class="flex items-center text-slate-600"><svg class="w-5 h-5 text-sky-500 mr-3"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>Extreme thrill rides</li>
-                            <li class="flex items-center text-slate-600"><svg class="w-5 h-5 text-sky-500 mr-3"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>Locker access included</li>
+                            <li class="flex items-center text-slate-600 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</span>All
+                                wave pools
+                            </li>
+                            <li class="flex items-center text-slate-600 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</span>Extreme
+                                thrill rides
+                            </li>
+                            <li class="flex items-center text-slate-600 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</span>Locker
+                                access included
+                            </li>
                         </ul>
                     </div>
                     <a routerLink="/booking"
-                        class="block w-full py-4 text-center font-bold text-sky-600 bg-sky-50 hover:bg-sky-100 rounded-xl transition-colors duration-200">
-                        Select
+                        class="block w-full py-3.5 text-center font-bold text-sky-700 rounded-xl transition-all duration-200 border"
+                        style="background:#eff6ff; border-color:#bfdbfe;" onmouseover="this.style.background='#dbeafe'"
+                        onmouseout="this.style.background='#eff6ff'">
+                        Select Adult Ticket →
                     </a>
                 </article>
 
-                <!-- Family Ticket (Popular) -->
-                <article
-                    class="bg-gradient-to-b from-sky-500 to-blue-600 rounded-3xl shadow-2xl shadow-blue-500/30 p-8 border border-sky-400 flex flex-col justify-between transform transition duration-300 hover:-translate-y-2 relative md:-mt-4 md:mb-4">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <span
-                            class="bg-amber-400 text-amber-900 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-md">Most
-                            Popular</span>
+                <!-- Family Ticket (Popular) — ELEVATED -->
+                <article class="flex flex-col justify-between rounded-3xl shadow-2xl p-8 relative -mt-4 mb-0"
+                    style="background: linear-gradient(160deg, #041C2C 0%, #0A3552 40%, #062438 100%); border: 1px solid rgba(0,212,255,0.25); box-shadow: 0 20px 60px rgba(0,212,255,0.2), 0 4px 20px rgba(0,0,0,0.4);">
+                    <!-- Popular badge -->
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span class="px-5 py-1.5 text-xs font-black rounded-full uppercase tracking-wider shadow-lg"
+                            style="background: linear-gradient(135deg,#F59E0B,#FCD34D); color:#1c1917; box-shadow:0 4px 12px rgba(245,158,11,0.4);">
+                            ⭐ Most Popular
+                        </span>
                     </div>
-                    <div>
-                        <div
-                            class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6 text-white backdrop-blur-sm">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Glow overlay -->
+                    <div class="absolute inset-0 rounded-3xl pointer-events-none"
+                        style="background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,0.1) 0%, transparent 70%);">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                            style="background: rgba(0,212,255,0.15); border:1px solid rgba(0,212,255,0.3);">
+                            <svg class="w-7 h-7" style="color:#00D4FF;" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
-                                </path>
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Family Pass</h3>
-                        <p class="text-sky-100 mb-6">2 Adults + 2 Kids. The perfect weekend getaway package.</p>
+                        <h3 class="text-2xl font-bold text-white mb-2" style="font-family:'Outfit',sans-serif;">Family
+                            Pass</h3>
+                        <p class="text-sky-200/80 mb-6 text-sm">2 Adults + 2 Kids. The perfect weekend getaway package.
+                        </p>
                         <div class="flex items-baseline gap-2 mb-6">
-                            <span class="text-4xl font-extrabold text-white">₹2999</span>
-                            <span class="text-sm font-semibold text-sky-200 line-through">₹3999</span>
+                            <span class="text-4xl font-extrabold text-white"
+                                style="font-family:'Outfit',sans-serif;">₹2999</span>
+                            <span class="text-sm font-semibold text-sky-300/60 line-through">₹3999</span>
+                            <span class="text-xs font-bold px-2 py-0.5 rounded-full ml-1"
+                                style="background:rgba(0,212,255,0.15);color:#00D4FF;border:1px solid rgba(0,212,255,0.3);">-25%</span>
                         </div>
                         <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-white"><svg class="w-5 h-5 text-sky-200 mr-3" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>Access for 4 members</li>
-                            <li class="flex items-center text-white"><svg class="w-5 h-5 text-sky-200 mr-3" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>Priority entry queue</li>
-                            <li class="flex items-center text-white"><svg class="w-5 h-5 text-sky-200 mr-3" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>Complimentary locker</li>
+                            <li class="flex items-center text-sky-100 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-xs font-black"
+                                    style="background:rgba(0,212,255,0.2);color:#00D4FF;">✓</span>Access for 4 members
+                            </li>
+                            <li class="flex items-center text-sky-100 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-xs font-black"
+                                    style="background:rgba(0,212,255,0.2);color:#00D4FF;">✓</span>Priority entry queue
+                            </li>
+                            <li class="flex items-center text-sky-100 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-xs font-black"
+                                    style="background:rgba(0,212,255,0.2);color:#00D4FF;">✓</span>Complimentary locker
+                            </li>
                         </ul>
                     </div>
                     <a routerLink="/booking"
-                        class="block w-full py-4 text-center font-bold text-blue-900 bg-white hover:bg-slate-50 shadow-lg rounded-xl transition-colors duration-200">
-                        Book Family Package
+                        class="relative z-10 block w-full py-4 text-center font-black rounded-xl transition-all duration-300 shadow-xl"
+                        style="background: linear-gradient(135deg,#00D4FF,#0891B2); color:#020B18; font-size:0.95rem; box-shadow:0 8px 24px rgba(0,212,255,0.35);">
+                        Book Family Package →
                     </a>
                 </article>
 
                 <!-- Child Ticket -->
-                <article
-                    class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 border border-slate-100 flex flex-col justify-between transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-200/40">
+                <article class="sw-card p-8 flex flex-col justify-between">
                     <div>
-                        <div
-                            class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 text-emerald-600">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                            style="background: linear-gradient(135deg,#d1fae5,#a7f3d0);">
+                            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                </path>
+                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Child Ticket</h3>
-                        <p class="text-slate-500 mb-6">Ages 3 to 11. Access to kids play area and gentle wave pools.</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2" style="font-family:'Outfit',sans-serif;">
+                            Child Ticket</h3>
+                        <p class="text-slate-500 mb-6 text-sm">Ages 3–11. Access to kids play area and gentle wave
+                            pools.</p>
                         <div class="flex items-baseline gap-2 mb-6">
-                            <span class="text-4xl font-extrabold text-slate-900">₹599</span>
+                            <span class="text-4xl font-extrabold" style="color:#065f46;">₹599</span>
                             <span class="text-sm font-semibold text-slate-400 line-through">₹799</span>
+                            <span
+                                class="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full ml-1">-25%</span>
                         </div>
                         <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-slate-600"><svg class="w-5 h-5 text-emerald-500 mr-3"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>Dedicated kids pool</li>
-                            <li class="flex items-center text-slate-600"><svg class="w-5 h-5 text-emerald-500 mr-3"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>Underwarder playgrounds</li>
-                            <li class="flex items-center text-slate-600"><svg class="w-5 h-5 text-emerald-500 mr-3"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>Free tube rentals</li>
+                            <li class="flex items-center text-slate-600 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</span>Dedicated
+                                kids pool
+                            </li>
+                            <li class="flex items-center text-slate-600 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</span>Underwater
+                                playgrounds
+                            </li>
+                            <li class="flex items-center text-slate-600 text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mr-3 flex-shrink-0 text-xs">✓</span>Free
+                                tube rentals
+                            </li>
                         </ul>
                     </div>
                     <a routerLink="/booking"
-                        class="block w-full py-4 text-center font-bold text-emerald-600 bg-emerald-50 hover:bg-emerald-100 rounded-xl transition-colors duration-200">
-                        Select
+                        class="block w-full py-3.5 text-center font-bold text-emerald-700 rounded-xl transition-all duration-200 border"
+                        style="background:#f0fdf4; border-color:#bbf7d0;" onmouseover="this.style.background='#dcfce7'"
+                        onmouseout="this.style.background='#f0fdf4'">
+                        Select Child Ticket →
                     </a>
                 </article>
 
             </div>
+
+            <!-- Promo strip -->
+            <div class="mt-12 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4"
+                style="background: linear-gradient(135deg,#041C2C,#0A3552); border:1px solid rgba(0,212,255,0.2);">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl">🏷️</span>
+                    <div>
+                        <p class="text-white font-bold text-sm">Use code <code
+                                class="text-yellow-300 bg-yellow-300/10 px-2 py-0.5 rounded font-mono">WAVE25</code> for
+                            25% off</p>
+                        <p class="text-sky-300 text-xs mt-0.5">Valid on all ticket types. Limited time offer!</p>
+                    </div>
+                </div>
+                <a routerLink="/booking" class="sw-btn-primary flex-shrink-0" style="padding: 10px 24px;">
+                    Claim Discount
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Attraction Showcase & Gallery -->
-    <section id="attractions" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- ═══════════════════════════════════════════════════════════
+         ATTRACTIONS SHOWCASE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="attractions" class="py-24 relative overflow-hidden"
+        style="background: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 30%, #E0F7FA 70%, #F0F9FF 100%);">
+
+        <!-- Ripple texture overlay -->
+        <img src="assets/images/ripple_card.png" alt="" aria-hidden="true"
+            class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" style="opacity:0.08;">
+
+        <!-- Top wave -->
+        <div class="absolute top-0 left-0 right-0">
+            <svg viewBox="0 0 1440 80" class="w-full" style="fill:#F0F9FF;" preserveAspectRatio="none">
+                <path d="M0,40L120,45C240,50,480,60,720,57C960,54,1200,40,1320,34L1440,28L1440,0L0,0Z" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div class="max-w-2xl">
-                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">World-Class
-                        Attractions</h2>
-                    <p class="text-lg text-slate-600">Discover over 30 thrilling water rides, relaxing lazy rivers, and
-                        massive wave pools designed for the ultimate family waterpark experience.</p>
+                    <div class="sw-section-tag mb-4">🎢 Attractions</div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight"
+                        style="font-family:'Outfit',sans-serif; letter-spacing:-0.02em; color:#0369A1;">
+                        World-Class<br>Attractions
+                    </h2>
+                    <p class="mt-4 text-base" style="color:#0284C7;">
+                        Discover 30+ thrilling water rides, relaxing lazy rivers, and massive wave pools.
+                    </p>
                 </div>
-                <a routerLink="/booking"
-                    class="inline-flex items-center text-sky-600 font-bold hover:text-sky-700 transition">
-                    Book Tickets Now
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
+                <a routerLink="/booking" class="sw-btn-primary flex-shrink-0" style="padding:12px 28px;">
+                    Book Tickets Now →
                 </a>
             </div>
 
-            <!-- Gallery Grid -->
+            <!-- Gallery Grid with colorful shadows -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Attraction 1 -->
-                <article class="group relative h-96 rounded-2xl overflow-hidden shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1582239327917-094e9f5bf08d"
-                        alt="Tornado Funnel Water Slide"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent">
+                <article class="group relative h-96 rounded-2xl overflow-hidden cursor-pointer"
+                    style="box-shadow: 0 8px 32px rgba(249,115,22,0.2), 0 2px 8px rgba(0,0,0,0.1);">
+                    <img src="assets/images/aqua_park_hero.png"
+                        alt="The Tornado — 3D Spiral Waterslide Extreme Thrill Ride"
+                        class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-800/20 to-transparent">
+                    </div>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 text-xs font-black rounded-full uppercase tracking-wider"
+                            style="background:#F97316; color:white; box-shadow:0 2px 10px rgba(249,115,22,0.6);">🔥
+                            Extreme Thrill</span>
                     </div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
-                        <span
-                            class="inline-block px-3 py-1 bg-red-500/90 backdrop-blur-sm text-white text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Extreme
-                            Thrill</span>
-                        <h3 class="text-2xl font-bold text-white mb-2">The Tornado</h3>
+                        <h3 class="text-2xl font-bold text-white mb-2" style="font-family:'Outfit',sans-serif;">The
+                            Tornado</h3>
                         <p
-                            class="text-slate-200 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                            Experience zero gravity as you plunge down our 6-story mega funnel.</p>
+                            class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                            Experience zero gravity as you plunge down our 6-story mega funnel.
+                        </p>
                     </div>
                 </article>
 
                 <!-- Attraction 2 -->
-                <article class="group relative h-96 rounded-2xl overflow-hidden shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1506509618588-e215f7ebaa0c" alt="Relaxing Lazy River"
+                <article class="group relative h-96 rounded-2xl overflow-hidden cursor-pointer"
+                    style="box-shadow: 0 8px 32px rgba(6,182,212,0.2), 0 2px 8px rgba(0,0,0,0.1);">
+                    <img src="assets/images/isometric_park.png"
+                        alt="Tropical Lazy River — Aerial 3D Isometric Waterpark View"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-800/20 to-transparent">
+                    </div>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 text-xs font-black rounded-full uppercase tracking-wider"
+                            style="background:#06B6D4; color:white; box-shadow:0 2px 10px rgba(6,182,212,0.6);">🛟
+                            Family Relax</span>
                     </div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
-                        <span
-                            class="inline-block px-3 py-1 bg-sky-500/90 backdrop-blur-sm text-white text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Family
-                            Relax</span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Tropical Lazy River</h3>
+                        <h3 class="text-2xl font-bold text-white mb-2" style="font-family:'Outfit',sans-serif;">Tropical
+                            Lazy River</h3>
                         <p
-                            class="text-slate-200 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                            Float along 1 kilometer of tropical landscapes and gentle currents.</p>
+                            class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                            Float along 1 km of tropical landscapes and gentle currents.
+                        </p>
                     </div>
                 </article>
 
                 <!-- Attraction 3 -->
                 <article
-                    class="group relative h-96 rounded-2xl overflow-hidden shadow-lg cursor-pointer md:col-span-2 lg:col-span-1">
-                    <img src="https://images.unsplash.com/photo-1542456578-1a5598166d1f"
-                        alt="Kids Water Playground Area"
+                    class="group relative h-96 rounded-2xl overflow-hidden cursor-pointer md:col-span-2 lg:col-span-1"
+                    style="box-shadow: 0 8px 32px rgba(16,185,129,0.2), 0 2px 8px rgba(0,0,0,0.1);">
+                    <img src="assets/images/wave_hero.png" alt="Splash Island — 3D Wave Pool and Kids Water Playground"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-800/20 to-transparent">
+                    </div>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 text-xs font-black rounded-full uppercase tracking-wider"
+                            style="background:#10B981; color:white; box-shadow:0 2px 10px rgba(16,185,129,0.6);">🧒 Kids
+                            & Toddlers</span>
                     </div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
-                        <span
-                            class="inline-block px-3 py-1 bg-emerald-500/90 backdrop-blur-sm text-white text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Kids
-                            & Toddlers</span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Splash Island</h3>
+                        <h3 class="text-2xl font-bold text-white mb-2" style="font-family:'Outfit',sans-serif;">Splash
+                            Island</h3>
                         <p
-                            class="text-slate-200 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                            A massive interactive water fort with mini slides and a 1000-liter tipping bucket.</p>
+                            class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                            A massive interactive water fort with mini slides and a 1000-litre tipping bucket.
+                        </p>
                     </div>
                 </article>
 
+            </div>
+        </div>
+
+        <!-- Bottom wave -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 60" class="w-full" style="fill:#F0F9FF;" preserveAspectRatio="none">
+                <path d="M0,30L120,35C240,40,480,48,720,46C960,44,1200,32,1320,26L1440,20L1440,60L0,60Z" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         BOTTOM CTA STRIP — Colorful Light
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="py-16 px-4" style="background:#F0F9FF;">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="rounded-3xl p-10 relative overflow-hidden"
+                style="background: linear-gradient(135deg,#E0F7FA 0%, #BAE6FD 40%, #E0F2FE 100%); box-shadow:0 12px 40px rgba(14,165,233,0.18), 0 0 0 1px rgba(14,165,233,0.12); border:1px solid rgba(14,165,233,0.2);">
+                <div class="absolute inset-0 pointer-events-none"
+                    style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(14,165,233,0.15) 0%, transparent 70%);">
+                </div>
+                <img src="assets/images/ripple_card.png" alt="" aria-hidden="true"
+                    class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
+                    style="opacity:0.12;">
+                <div class="relative z-10">
+                    <div class="sw-section-tag mb-4">🎉 Book Now &amp; Save 25%</div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4"
+                        style="font-family:'Outfit',sans-serif; color:#0369A1;">
+                        Ready to Make a Splash? 🌊
+                    </h2>
+                    <p class="text-sky-600 text-base mb-8 max-w-xl mx-auto">
+                        Join over 2 lakh happy visitors every year. Book your tickets now and skip the queue!
+                    </p>
+                    <a routerLink="/booking" class="sw-btn-primary" style="padding:14px 40px; font-size:1rem;">
+                        Book Your Visit Today →
+                    </a>
+                </div>
             </div>
         </div>
     </section>
